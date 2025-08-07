@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  background-color: #111;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  position: relative;
+}
+
+.left-button {
+  background-color: white;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.icons {
+  display: flex;
+  gap: 17px;
+}
+
+.icon-button {
+  width: px;
+  height: 25px;
+}
+
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.tile {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #121213;
+}
+.keyboard {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 600px;
+}
+.key {
+  background-color: #818384;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.info-bar {
+  margin-top: 20px;
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+.filled {
+  border-color: #3a3a3c;
+}
+.end-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 19, 0.95);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 1000;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+.end-screen .code {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #00ff95;
+  font-family: monospace;
+  background: #1d1d1f;
+  padding: 8px 14px;
+  border-radius: 6px;
+  user-select: all;
+}.retry-button {
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.retry-button:hover {
+  background-color: #cccccc;
+}
+.retry-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00ff95;
+}
+.retry-button:active {
+  background-color: #b3b3b3;
+}
+.retry-button:disabled {
+  background-color: #666666;
+  cursor: not-allowed;
+}
+.retry-button:disabled:hover {          
+  background-color: #666666;
+}
+.retry-button:disabled:focus {
+  box-shadow: none;
+}
+.retry-button:disabled:active {
+  background-color: #666666;
+}
+.retry-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}             .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 19, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+.popup-box {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  color: #fff;
+}
+.popup-header {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.popup-content {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.popup-close {
+  margin-top: 20px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+.popup-close:hover {
+  background: #cccccc;
+}
+.redeem-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #00ff95;
+  color: #000000;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.redeem-button:hover {
+  background-color: #00cc77;
+}
+.popup-close:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00ff95;
+}.info-bar ul {
+  padding-left: 1.2em;
+  list-style: disc;
+  color: #ccc;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #121213;
+  color: white;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior: none;
+}
+
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: none;
+}
+
+a, button {
+  touch-action: manipulation;
+}
