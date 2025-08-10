@@ -68,9 +68,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin: 0 auto;
   width: 100%;
-  max-width: 350px;
+  max-width: 500px; /* match keyboard */
 }
 .row {
   display: flex;
