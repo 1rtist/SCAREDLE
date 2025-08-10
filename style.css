@@ -6,8 +6,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: #121213;
-  color: #d7dadc;
+  color: #68696a;
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -187,7 +186,7 @@ h1 {
 .retry-button,
 .popup-close,
 .redeem-button {
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #ffffff;
   color: #000000;
   border: none;
@@ -277,4 +276,18 @@ h1 {
     height: 12vw;
     font-size: 1rem;
   }
+}
+
+/* --- Falling Animation --- */
+.fall {
+  animation: fall 7s forwards;
+}
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(30deg); opacity: 0; }
+}
+
+body {
+  background: #121213 url('money.gif') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
