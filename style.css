@@ -1,3 +1,4 @@
+/* --- Reset & Base --- */
 * {
   box-sizing: border-box;
 }
@@ -5,15 +6,23 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: #121213;
+  color: #d7dadc;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior: none;
 }
-body {
-  background-color: #111;
-  color: white;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: none;
+}
+a, button {
+  touch-action: manipulation;
 }
 
+/* --- Header --- */
 header {
   display: flex;
   align-items: center;
@@ -21,7 +30,20 @@ header {
   padding: 10px 12px;
   position: relative;
 }
-
+h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 0.18em;
+  color: #d7dadc;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-shadow: 0 1px 0 #000;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
 .left-button {
   background-color: white;
   color: black;
@@ -31,28 +53,16 @@ header {
   text-decoration: none;
   white-space: nowrap;
 }
-
-h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
 .icons {
   display: flex;
   gap: 17px;
 }
-
 .icon-button {
-  width: px;
+  width: 25px;
   height: 25px;
 }
 
-
+/* --- Game Board --- */
 .game-board {
   display: flex;
   flex-direction: column;
@@ -60,6 +70,7 @@ h1 {
   justify-content: center;
   margin-top: 20px;
   width: 100%;
+  max-width: 350px;
 }
 .row {
   display: flex;
@@ -67,44 +78,82 @@ h1 {
   gap: 5px;
 }
 .tile {
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   border: 2px solid #3a3a3c;
+  background-color: #121213;
+  color: #d7dadc;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #121213;
+  transition: background 0.2s, border 0.2s;
 }
+
+/* --- Keyboard --- */
 .keyboard {
-  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 32px auto 0 auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 8px;
+}
+.keyboard-row {
+  display: flex;
   justify-content: center;
   gap: 6px;
-  max-width: 600px;
+  width: 100%;
 }
 .key {
+  flex: 1 1 0;
+  min-width: 32px;
+  max-width: 43px;
   background-color: #818384;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 10px 14px;
-  font-size: 1rem;
+  padding: 0;
+  height: 58px;
+  margin: 0;
+  font-size: 1.2rem;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
   user-select: none;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.key.special {
+  flex: 1.5 1 0;
+  max-width: 70px;
+  background-color: #d3d6da;
+  color: #000;
+  font-weight: bold;
+  height: 58px;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+/* --- Info Bar --- */
 .info-bar {
   margin-top: 20px;
   text-align: center;
   color: #b3b3b3;
   font-size: 0.9rem;
 }
-.filled {
-  border-color: #3a3a3c;
+.info-bar ul {
+  padding-left: 1.2em;
+  list-style: disc;
+  color: #ccc;
 }
+
+/* --- End Screen --- */
 .end-screen {
   position: fixed;
   top: 0;
@@ -132,7 +181,12 @@ h1 {
   padding: 8px 14px;
   border-radius: 6px;
   user-select: all;
-}.retry-button {
+}
+
+/* --- Buttons --- */
+.retry-button,
+.popup-close,
+.redeem-button {
   margin-top: 20px;
   background-color: #ffffff;
   color: #000000;
@@ -144,33 +198,28 @@ h1 {
   cursor: pointer;
   transition: background 0.2s;
 }
-.retry-button:hover {
+.retry-button:hover,
+.popup-close:hover,
+.redeem-button:hover {
   background-color: #cccccc;
 }
-.retry-button:focus {
+.retry-button:focus,
+.popup-close:focus {
   outline: none;
   box-shadow: 0 0 0 2px #00ff95;
 }
-.retry-button:active {
+.retry-button:active,
+.popup-close:active {
   background-color: #b3b3b3;
 }
 .retry-button:disabled {
   background-color: #666666;
   cursor: not-allowed;
-}
-.retry-button:disabled:hover {          
-  background-color: #666666;
-}
-.retry-button:disabled:focus {
-  box-shadow: none;
-}
-.retry-button:disabled:active {
-  background-color: #666666;
-}
-.retry-button:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
-}             .popup-overlay {
+}
+
+/* --- Popups --- */
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -199,87 +248,33 @@ h1 {
   font-size: 1rem;
   line-height: 1.5;
 }
-.popup-close {
-  margin-top: 20px;
-  padding: 10px 18px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #000000;
-  cursor: pointer;
-}
-.popup-close:hover {
-  background: #cccccc;
-}
-.redeem-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  background-color: #00ff95;
-  color: #000000;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
-.redeem-button:hover {
-  background-color: #00cc77;
-}
-.popup-close:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #00ff95;
-}.info-bar ul {
-  padding-left: 1.2em;
-  list-style: disc;
-  color: #ccc;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: #121213;
-  color: white;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
-  overscroll-behavior: none;
-}
 
-html {
-  font-size: 14px;
-  -webkit-text-size-adjust: none;
-}
-
-a, button {
-  touch-action: manipulation;
-}
-.keyboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  width: 100%;
-}
-
-.keyboard-row {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-}
-
-.row-2 {
-  margin-left: 14px; /* middle row offset */
-}
-
-.row-3 {
-  margin-left: 34px; /* bottom row offset */
-}
-
-.key.special {
-  padding: 10px 20px;
-  font-weight: bold;
+/* --- Responsive for mobile screens --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+  }
+  .game-board {
+    max-width: 98vw;
+  }
+  .tile {
+    width: 18vw;
+    height: 18vw;
+    font-size: 1.3rem;
+  }
+  .keyboard {
+    max-width: vw;
+    padding: 0 2vw;
+    gap: 8px;
+  }
+  .keyboard-row {
+    gap: 4px;
+  }
+  .key, .key.special {
+    min-width: 8vw;
+    max-width: 15vw;
+    height: 12vw;
+    font-size: 1rem;
+  }
 }
