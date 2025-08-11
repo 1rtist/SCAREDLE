@@ -139,9 +139,10 @@ document.getElementById('rules-btn').addEventListener('click', showRules);
 
 function showHint() {
   const hints = [
-    "👻 The word is part of the brand.",
-    "🧠 Think like SCARE — it's not random.",
-    "🕵️‍♂️ You wear it, but it's not just fashion."
+    " you thought you would get a hint?.",
+    " a hint? no i meant a mint.",
+    " fr???????",
+    " smh the easy way huh couldnt be me"
   ];
   const randomHint = hints[Math.floor(Math.random() * hints.length)];
   showPopup("Hint", randomHint);
