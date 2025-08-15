@@ -71,7 +71,7 @@ function checkGuess(guess, tiles) {
 }
 
 function generateCode() {
-  return "SCARE-XE467";
+  return "thatsalilbetter";
 }
 
 function showWinMessage(code) {
@@ -101,8 +101,9 @@ function showWinMessage(code) {
       const overlay = document.createElement('div');
       overlay.innerHTML = `
         <div class="end-screen">
-          <div>YOU WON</div>
-          <p>Your unique code to redeem your free item is:</p>
+          <div>YOU KINDA WON</div>
+          <p>sorry you were too late the 10 prizes have been claimed but...</p>
+          <p>we can give you a code for 15% off:</p>
           <div class="code" id="reward-code">${code}</div>
           <button class="retry-button" id="copy-code-btn">Copy Code</button>
           <p style="font-size: 14px; margin-top: 10px;">Copy this code and use it at checkout.</p>
